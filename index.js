@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(cors(
-    origin = "http://localhost:5173"
+    origin = "https://idyllic-sunshine-29b28a.netlify.app"
 ));
 
 app.use('/tipo', tipoR);
