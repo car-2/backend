@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const URI = 'mongodb://localhost:27017/cuevana';
+require('dotenv').config();
 
-mongoose.connect(URI, {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

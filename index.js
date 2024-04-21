@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+require('dotenv').config();
 app.use(express.json());
 
 const database = require('./databases/database');
@@ -12,12 +13,12 @@ const producerR = require('./routes/producerR');
 
 
 async function principal(){ 
-    await app.listen(12330);
-    console.log("Express conectado en el puerto 12330");
+    await app.listen(process.env.PORT);
+    console.log(`Express conectado en el puerto ${process.env.PORT}`);
 }
 
 app.get('/', (req, res) => {
-    res.send("Express conectado en el puerto 12330");
+    res.send(`Express conectado en el puerto ${process.env.PORT}`);
 });
 
 app.use(cors(
